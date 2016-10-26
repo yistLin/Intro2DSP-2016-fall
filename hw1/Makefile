@@ -1,6 +1,6 @@
 .PHONY: all clean
 
-CFLAGS+=
+CFLAGS+=-std=c99 -O2
 LDFLAGS+=-lm
 
 TARGET=test_hmm train test

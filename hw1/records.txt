@@ -1,1 +1,6 @@
 iter=200, acc=0.8424
+iter=400, acc=0.8476
+iter=600, acc=0.818
+iter=800, acc=0.752
+iter=1000, acc=0.7264
+iter=1500, acc=0.7212
