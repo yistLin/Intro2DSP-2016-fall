@@ -178,8 +178,8 @@ int main(int argc, char* const argv[]) {
             for (int j = 0; j < numberOfState; j++) {
                 sum_up = sum_down = 0;
                 for (int t = 0; t < lengthOfSeq-1; t++) {
-                    sum_up = sum_epsilon[t][i][j];
-                    sum_down = sum_gamma[t][i];
+                    sum_up += sum_epsilon[t][i][j];
+                    sum_down += sum_gamma[t][i];
                 }
                 hmm_initial.transition[i][j] = sum_up / sum_down;
             }
