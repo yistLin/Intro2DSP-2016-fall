@@ -3,7 +3,7 @@
 CFLAGS+=-std=c99 -O2
 LDFLAGS+=-lm
 
-TARGET=test_hmm train test
+TARGET=train test
 
 all: $(TARGET)
 

@@ -28,18 +28,14 @@ double viterbi(HMM* hmm, char* sample, const int numberOfState) {
                 if (tmp_source > max_source)
                     max_source = tmp_source;
             }
-            // printf("max_source = %lf, ", max_source);
             delta[t][j] = max_source + log_prob(hmm->observation[observ2int(sample[t])][j]);
-            // printf("delta[%d][%d] = %lf\n", t, j, delta[t][j]);
 
             // termination
             if (t == lengthOfSeq-1 && delta[t][j] > prob_logged)
                 prob_logged = delta[t][j];
         }
-        // printf("\n");
     }
 
-    // printf("exp(%lf) = %e\n", prob_logged, exp(prob_logged));
     return exp(prob_logged);
 }
 
@@ -107,10 +103,8 @@ int main(int argc, char* const argv[]) {
                 highest_prob = prob;
                 likely_model = m;
             }
-            // return 0;
         }
-        // fprintf(output_fp, "%s %e\n", hmmlist[likely_model].model_name, highest_prob);
-        fprintf(output_fp, "%s\n", hmmlist[likely_model].model_name);
+        fprintf(output_fp, "%s %e\n", hmmlist[likely_model].model_name, highest_prob);
     }
 
     // close output file

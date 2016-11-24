@@ -1,0 +1,69 @@
+% report.tex
+% report 1 - Introduction to Digital Speech Processing
+
+\documentclass[14pt,a4paper]{extarticle}
+\usepackage[margin=2.54cm]{geometry}
+\usepackage[slantfont,boldfont]{xeCJK}
+\usepackage[utf8]{inputenc}
+\usepackage{indentfirst}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{caption}
+\usepackage{graphicx}
+\usepackage{float}
+
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\definecolor{darkgray}{rgb}{0.3,0.3,0.3}
+\newcommand{\inlinecode}[1]{\colorbox{backcolour}{\color{darkgray}\texttt{\small{#1}}}}
+
+\setCJKmainfont{cwTeXFangSong}
+\setmainfont{Noto Serif}
+\setmonofont{Source Code Pro}
+\setlength{\parskip}{\baselineskip}
+
+\title{Digital Speech Processing\\Homework 1 Report\vspace{-1ex}}
+\author{林義聖\\\small{B03902048}\vspace{-1ex}}
+\date{\small{\today}\vspace{-1ex}}
+
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\small{\jobname.pdf}}
+\rhead{\small{105-1數位語音處理}}
+\cfoot{\small{\thepage\ of \pageref{LastPage}}}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{fancy}
+
+\section*{Environment}
+
+\begin{itemize}
+	\item OS: macOS Sierra 10.12
+	\item Compiler: clang-800.0.42.1
+\end{itemize}
+
+\section*{Analysis}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.5]{analysis.png}
+\caption{Analysis testing\_data1}
+\label{fig:analysis.png}
+\end{figure}
+
+I've trained every models with iterations ranging from 1 to 400 and calculated the accuracy of them by comparing the results of \textit{testing\_data1.txt} with \textit{testing\_answer.txt}.
+
+Additionally, I also tried training some models with some larger numbers of iterations($\leq 1500$), and the best accuracy I got is $0.8704$, which is from the result of the model trained with $888$ iterations.
+
+\section*{How to Execute}
+
+\begin{enumerate}
+	\item Compile the programs\\ \inlinecode{> make}
+	\item Do training\\ \inlinecode{> ./train [iterations] model\_init.txt [sequences] [output]}
+	\item Do testing\\ \inlinecode{> ./test modellist.txt [testing data] [result]}
+\end{enumerate}
+
+\end{document}

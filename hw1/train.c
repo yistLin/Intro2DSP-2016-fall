@@ -196,7 +196,7 @@ int main(int argc, char* const argv[]) {
     }
 
     // dumpHMM to see the results
-    dumpHMM(stderr, &hmm_initial);
+    // dumpHMM(stderr, &hmm_initial);
 
     // dumpHMM to output file
     FILE* outputfile = open_or_die(outputModel, "w");
