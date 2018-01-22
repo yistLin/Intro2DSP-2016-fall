@@ -1,0 +1,45 @@
+% report.tex
+% report of homework 3 - Introduction to Digital Speech Processing
+
+\documentclass[12pt,a4paper]{extarticle}
+\usepackage[margin=2.54cm]{geometry}
+\usepackage{xeCJK}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{xcolor}
+\usepackage{url}
+
+\newfontinstance{\optima}{Optima}
+\setCJKmainfont{Kaiti TC}
+
+\newcommand{\code}[1]{\colorbox[rgb]{0.9,0.9,0.8}{\color[rgb]{0.3,0.3,0.5}{\texttt{#1}}}}
+
+\title{{\optima Digital Speech Processing\\HW3 Report}}
+\author{林義聖\\B03902048}
+\date{\today}
+
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\small{\jobname.pdf}}
+\rhead{\small{105-1數位語音處理}}
+\cfoot{\small{\thepage\ of \pageref{LastPage}}}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{fancy}
+
+\section{Environment}
+
+I write and run my programs on one of the machines of CSIE Workstation, which is at \url{oasis2.csie.ntu.edu}, and its OS is ARCH Linux.
+
+\section{How to Compile}
+
+Simply type command \code{make MACHINE\_TYPE=[Machine Type] SRIPATH=[SRIPATH] all} to compile \textit{mydisambig}.
+
+\section{How to Execute}
+
+Type command \code{make map} to generate \textit{ZhuYin-Big5.map}.\\
+Type command \code{make MACHINE\_TYPE=[Machine Type] SRIPATH=[SRIPATH] LM=[LM] run} to run \textit{mydisambig} and generate \textit{result2/1$\sim$10.txt}.
+
+\end{document}
